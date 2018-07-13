@@ -26,7 +26,6 @@ app.get('/api', (req, res) => {
   ]
 
   res.json(obj)
-
 })
 
-app.listen(port)
+app.listen(port) 
