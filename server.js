@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const config = require('./config')
+const setupController = require('./controllers/setupController')
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs')
 app.use('/assets', express.static(`${__dirname}/public`))
 
 mongoose.connect(config.getDbConnectionString())
+setupController(app)
 
 app.get('/', (req, res) => res.send('Hello!'))
 
