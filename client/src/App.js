@@ -23,7 +23,15 @@ class App extends Component {
         </header>
         <h2>People</h2>
         <ul>
-          {people.map(person => <li key={person.id}>{person.name}</li>)}
+          {
+            people.map(person => (
+              <li
+                key={person.id}
+              >
+                {person.name}
+              </li>
+            ))
+          }
         </ul>
       </div>
     )
