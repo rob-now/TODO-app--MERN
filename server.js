@@ -1,4 +1,6 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const config = require('./config')
 
 const app = express()
 
@@ -7,6 +9,8 @@ const port = process.env.PORT || 5000
 app.set('view engine', 'ejs')
 
 app.use('/assets', express.static(`${__dirname}/public`))
+
+mongoose.connect(config.getDbConnectionString())
 
 app.get('/', (req, res) => res.send('Hello!'))
 
