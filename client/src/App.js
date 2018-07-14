@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
   state = {
-    people =[]
+    people: [],
+  }
+
+  componentDidMount() {
+    fetch('/api')
+      .then(res => res.json())
+      .then(people => this.setState({ people }))
   }
 
   render() {
+    const { people } = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -15,6 +22,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <h2>People</h2>
+        <ul>
+          {people.map(person => <li key={person.id}>{person.name}</li>)}
+        </ul>
       </div>
     )
   }
