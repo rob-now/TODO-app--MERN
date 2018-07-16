@@ -37,8 +37,16 @@ module.exports = (app) => {
         hasAttachment: req.body.hasAttachment,
       })
       newTodo.save((err) => {
+        if (err) throw err
         res.send('Successfully added todo.')
       })
     }
+  })
+
+  app.delete('/api/todo', (req, res) => {
+    Todos.findByIdAndRemove(req.body.id, (err) => {
+      if (err) throw err
+      res.send('Successfully deleted todo.')
+    })
   })
 }
