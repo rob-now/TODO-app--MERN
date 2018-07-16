@@ -11,4 +11,11 @@ module.exports = (app) => {
       res.send(todos)
     })
   })
+
+  app.get('/api/todos/:id', (req, res) => {
+    Todos.findById({ _id: req.params.id }, (err, todo) => {
+      if (err) throw err
+      res.send(todo)
+    })
+  })
 }
