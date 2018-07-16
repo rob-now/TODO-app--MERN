@@ -18,4 +18,27 @@ module.exports = (app) => {
       res.send(todo)
     })
   })
+
+  app.post('/api/todo', (req, res) => {
+    if (req.body.id) {
+      Todos.findByIdAndUpdate(req.body.id, {
+        todo: req.body.todo,
+        isDone: req.body.isDone,
+        hasAttachment: req.body.hasAttachment,
+      }, (err, todo) => {
+        if (err) throw err
+        res.send('Successfully updated todo.')
+      })
+    } else {
+      const newTodo = Todos({
+        username: 'test',
+        todo: req.body.todo,
+        isDone: req.body.isDone,
+        hasAttachment: req.body.hasAttachment,
+      })
+      newTodo.save((err) => {
+        res.send('Successfully added todo.')
+      })
+    }
+  })
 }
