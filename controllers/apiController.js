@@ -31,7 +31,7 @@ module.exports = (app) => {
       })
     } else {
       const newTodo = Todos({
-        username: 'test',
+        username: 'test_user1',
         todo: req.body.todo,
         isDone: req.body.isDone,
         hasAttachment: req.body.hasAttachment,
