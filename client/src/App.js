@@ -6,7 +6,6 @@ import TodoList from './components/TodoList';
 
 class App extends Component {
   state = {
-    todoName: '',
     todos: [],
     isFetching: false,
   }
@@ -22,17 +21,7 @@ class App extends Component {
       .catch(err => err.message)
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    })
-  }
-
-  addTodo = (event) => {
-    event.preventDefault()
-
-    const { todoName } = this.state
-
+  addTodo = (todoName) => {
     fetch('api/todo', {
       method: 'POST',
       headers: {
@@ -49,10 +38,6 @@ class App extends Component {
         .then(res => res.json())
         .then(todos => this.setState({ todos }))
         .catch(err => err.message))
-
-    this.setState({
-      todoName: '',
-    })
   }
 
   removeTodo = (todoId) => {
@@ -73,7 +58,10 @@ class App extends Component {
   }
 
   render() {
-    const { todos, todoName, isFetching } = this.state
+    const {
+      todos,
+      isFetching,
+    } = this.state
 
     return (
       <div className="App">
@@ -83,9 +71,7 @@ class App extends Component {
         </header>
         <h2>Todos</h2>
         <TodoForm
-          todoName={todoName}
           addTodo={this.addTodo}
-          handleChange={this.handleChange}
         />
         <TodoList
           todos={todos}
