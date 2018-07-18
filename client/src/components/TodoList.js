@@ -1,12 +1,12 @@
 import React from 'react'
 
 function TodoList(props) {
-  const { todos, removeTodo } = props
+  const { todos, removeTodo, isFetching } = props
 
   return (
     <ul>
       {
-        todos && todos.map(todo => (
+        isFetching ? <h3>Loading Todos...</h3> : todos.map(todo => (
           <li key={todo._id}>
             {todo.todo} [is done: {todo.isDone.toString()}]
             <button

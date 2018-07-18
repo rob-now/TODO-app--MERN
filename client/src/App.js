@@ -8,12 +8,17 @@ class App extends Component {
   state = {
     todoName: '',
     todos: [],
+    isFetching: false,
   }
 
   componentDidMount() {
+    this.setState({
+      isFetching: true,
+    })
+
     fetch('/api/todos/test_user1')
       .then(res => res.json())
-      .then(todos => this.setState({ todos }))
+      .then(todos => this.setState({ todos, isFetching: false }))
       .catch(err => err.message)
   }
 
@@ -68,7 +73,8 @@ class App extends Component {
   }
 
   render() {
-    const { todos, todoName } = this.state
+    const { todos, todoName, isFetching } = this.state
+
     return (
       <div className="App">
         <header className="App-header">
@@ -84,6 +90,7 @@ class App extends Component {
         <TodoList
           todos={todos}
           removeTodo={this.removeTodo}
+          isFetching={isFetching}
         />
       </div>
     )
