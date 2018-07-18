@@ -57,6 +57,33 @@ class App extends Component {
     })
   }
 
+  toggleTodoDone = (todoId, todo) => {
+    this.setState({
+      todos: this.state.todos.map(todo => (
+        todo._id === todoId
+          ? {
+            ...todo,
+            isDone: !todo.isDone,
+          }
+          : {
+            ...todo,
+          }
+      )),
+    })
+
+    fetch('/api/todo', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...todo,
+        id: todo._id,
+        isDone: !todo.isDone,
+      }),
+    })
+  }
+
   render() {
     const {
       todos,
@@ -77,6 +104,7 @@ class App extends Component {
           todos={todos}
           removeTodo={this.removeTodo}
           isFetching={isFetching}
+          toggleTodoDone={this.toggleTodoDone}
         />
       </div>
     )
