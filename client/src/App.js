@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 class App extends Component {
   state = {
@@ -16,8 +18,6 @@ class App extends Component {
   }
 
   handleChange = (event) => {
-    event.preventDefault()
-
     this.setState({
       [event.target.name]: event.target.value,
     })
@@ -76,37 +76,15 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <h2>Todos</h2>
-        <form onSubmit={this.addTodo}>
-          <label htmlFor="form-todo-name">Todo name:
-            <input
-              id="form-todo-name"
-              type="text"
-              name="todoName"
-              value={todoName}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button
-            type="submit"
-          >
-            Add todo
-          </button>
-        </form>
-        <ul>
-          {
-            todos && todos.map(todo => (
-              <li key={todo._id}>
-                {todo.todo} [is done: {todo.isDone.toString()}]
-                <button
-                  type="button"
-                  onClick={() => this.removeTodo(todo._id)}
-                >
-                  Remove
-                </button>
-              </li>
-            ))
-          }
-        </ul>
+        <TodoForm
+          todoName={todoName}
+          addTodo={this.addTodo}
+          handleChange={this.handleChange}
+        />
+        <TodoList
+          todos={todos}
+          removeTodo={this.removeTodo}
+        />
       </div>
     )
   }
