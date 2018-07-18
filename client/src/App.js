@@ -34,10 +34,13 @@ class App extends Component {
         hasAttachment: 'false',
       }),
     }).catch(err => err.message)
-      .then(fetch('/api/todos/test_user1')
-        .then(res => res.json())
-        .then(todos => this.setState({ todos }))
-        .catch(err => err.message))
+      .then(setTimeout(
+        fetch('/api/todos/test_user1')
+          .then(res => res.json())
+          .then(todos => this.setState({ todos }))
+          .catch(err => err.message),
+        50,
+      ))
   }
 
   removeTodo = (todoId) => {
