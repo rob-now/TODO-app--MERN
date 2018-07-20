@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TodoContent from './TodoContent';
 
 class TodoList extends Component {
   state = {
@@ -10,7 +11,6 @@ class TodoList extends Component {
       editTodoId: todoId,
     })
   }
-
 
   render() {
     const {
@@ -37,23 +37,11 @@ class TodoList extends Component {
                 {
                   editTodoId === todo._id && '*'
                 }
-                {
-                  todo.isDone
-                    ? <del>{todo.todo}</del>
-                    : todo.todo
-                }
-                <button
-                  type="button"
-                  onClick={() => this.editTodoMode(todo._id)}
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  onClick={() => removeTodo(todo._id)}
-                >
-                  Remove
-                </button>
+                <TodoContent
+                  todo={todo}
+                  editTodoMode={this.editTodoMode}
+                  removeTodo={removeTodo}
+                />
               </li>
             ))
         }
