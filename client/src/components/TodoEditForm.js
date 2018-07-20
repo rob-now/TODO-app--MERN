@@ -33,7 +33,7 @@ class TodoEditForm extends Component {
       return
     }
 
-    updateTodo(todoId, 'test_user1', todoName, isDone, hasAttachment)
+    updateTodo(todoId, todoName, isDone, hasAttachment)
     exitEditTodoMode()
   }
 

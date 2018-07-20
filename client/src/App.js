@@ -86,18 +86,15 @@ class App extends Component {
     })
   }
 
-  updateTodo = (todoId, todoUsername, todoName, isDone, hasAttachment) => {
+  updateTodo = (todoId, todoName, isDone, hasAttachment) => {
     const { todos } = this.state
     this.setState({
       todos: todos.map(todo => (
         todo._id !== todoId
           ? todo
           : {
-            _id: todoId,
-            username: todoUsername,
+            ...todo,
             todo: todoName,
-            isDone,
-            hasAttachment,
           }
       )),
     })
