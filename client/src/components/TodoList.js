@@ -29,7 +29,6 @@ class TodoList extends Component {
     } = this.props
 
     const { editTodoId } = this.state
-    console.log(editTodoId)
     return (
       <ul>
         {

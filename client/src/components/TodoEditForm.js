@@ -50,6 +50,10 @@ class TodoEditForm extends Component {
       formError,
     } = this.state
 
+    const {
+      exitEditTodoMode,
+    } = this.props
+
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="form-todo-name">Todo name:
@@ -65,6 +69,12 @@ class TodoEditForm extends Component {
           type="submit"
         >
           Update todo
+        </button>
+        <button
+          type="button"
+          onClick={() => exitEditTodoMode()}
+        >
+          Cancel
         </button>
         {formError && <p className="form-error-message">{formError.message}</p>}
       </form>
