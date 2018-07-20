@@ -93,13 +93,26 @@ class App extends Component {
         todo._id !== todoId
           ? todo
           : {
-            _id: todo._id,
+            _id: todoId,
             username: todoUsername,
             todo: todoName,
             isDone,
             hasAttachment,
           }
       )),
+    })
+
+    fetch('/api/todo', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: todoId,
+        todo: todoName,
+        isDone,
+        hasAttachment,
+      }),
     })
   }
 
