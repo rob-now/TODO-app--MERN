@@ -86,6 +86,23 @@ class App extends Component {
     })
   }
 
+  updateTodo = (todoId, todoUsername, todoName, isDone, hasAttachment) => {
+    const { todos } = this.state
+    this.setState({
+      todos: todos.map(todo => (
+        todo._id !== todoId
+          ? todo
+          : {
+            _id: todo._id,
+            username: todoUsername,
+            todo: todoName,
+            isDone,
+            hasAttachment,
+          }
+      )),
+    })
+  }
+
   render() {
     const {
       todos,
@@ -107,6 +124,7 @@ class App extends Component {
           removeTodo={this.removeTodo}
           isFetching={isFetching}
           toggleTodoDone={this.toggleTodoDone}
+          updateTodo={this.updateTodo}
         />
       </div>
     )

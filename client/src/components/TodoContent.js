@@ -2,9 +2,19 @@ import React, { Component, Fragment } from 'react'
 
 class TodoContent extends Component {
   render() {
-    const { todo, editTodoMode, removeTodo } = this.props
+    const {
+      todo,
+      editTodoMode,
+      removeTodo,
+      toggleTodoDone,
+    } = this.props
     return (
       <Fragment>
+        <input
+          type="checkbox"
+          checked={todo.isDone}
+          onChange={() => toggleTodoDone(todo._id, todo)}
+        />
         {
           todo.isDone
             ? <del>{todo.todo}</del>
