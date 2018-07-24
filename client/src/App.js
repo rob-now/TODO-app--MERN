@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import logo from './logo.svg'
+import React, { Component, Fragment } from 'react'
 import './App.css'
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
@@ -120,23 +119,26 @@ class App extends Component {
     } = this.state
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <h2>Todos</h2>
-        <TodoForm
-          addTodo={this.addTodo}
-        />
-        <TodoList
-          todos={todos}
-          removeTodo={this.removeTodo}
-          isFetching={isFetching}
-          toggleTodoDone={this.toggleTodoDone}
-          updateTodo={this.updateTodo}
-        />
-      </div>
+      <Fragment>
+        <div className="App">
+          <header className="App-header">
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <h1 className="App-title">My todos</h1>
+          </header>
+        </div>
+        <div>
+          <TodoForm
+            addTodo={this.addTodo}
+          />
+          <TodoList
+            todos={todos}
+            removeTodo={this.removeTodo}
+            isFetching={isFetching}
+            toggleTodoDone={this.toggleTodoDone}
+            updateTodo={this.updateTodo}
+          />
+        </div>
+      </Fragment>
     )
   }
 }
