@@ -1,22 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import styled from 'styled-components'
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-
-
-const StyledApp = styled.div`
-  text-align: center;
-`
-const StyledAppHeader = styled.div`
-background-color: #222;
-  padding: 20px;
-  margin-bottom: 50px;
-  color: white;
-`
-
-const H1 = styled.h1`
-  font-size: 1.5em;
-`
+import {
+  StyledApp,
+  StyledAppHeader,
+  H1,
+} from './components/styledComponents/styledApp'
 
 class App extends Component {
   state = {
