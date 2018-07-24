@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { StyledTodoButtonsContainer } from './styledComponents/styledApp'
 
 class TodoEditForm extends Component {
   state = {
@@ -56,7 +57,7 @@ class TodoEditForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="form-todo-name">Todo name:
+        <label htmlFor="form-todo-name">
           <input
             id="form-todo-name"
             type="text"
@@ -65,17 +66,19 @@ class TodoEditForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <button
-          type="submit"
-        >
-          Update todo
-        </button>
-        <button
-          type="button"
-          onClick={() => exitEditTodoMode()}
-        >
-          Cancel
-        </button>
+        <StyledTodoButtonsContainer>
+          <button
+            type="submit"
+          >
+            Update todo
+          </button>
+          <button
+            type="button"
+            onClick={() => exitEditTodoMode()}
+          >
+            Cancel
+          </button>
+        </StyledTodoButtonsContainer>
         {formError && <p className="form-error-message">{formError.message}</p>}
       </form>
     )
