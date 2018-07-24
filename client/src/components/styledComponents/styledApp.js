@@ -20,14 +20,20 @@ export const StyledTodos = styled.div`
   flex-wrap: wrap;
 `
 
-export const StyledTodo = styled.div`
-  width: 220px;
-  height: 100%;
-  background: #eee;
-  margin: 20px;
-`
 export const StyledTodoButtonsContainer = styled.div`
+  // display: none;
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
+`
+
+export const StyledTodo = styled.div`
+  width: 220px;
+  height: 100%;
+  min-height: 220px;
+  background: #eee;
+  margin: 20px;
+  // &:hover ${StyledTodoButtonsContainer}{
+  //   display: flex;
+  // }
 `
