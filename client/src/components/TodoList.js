@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import TodoContent from './TodoContent';
 import TodoEditForm from './TodoEditForm';
+import {
+  StyledTodos,
+  StyledTodo,
+} from './styledComponents/styledApp'
 
 class TodoList extends Component {
   state = {
@@ -30,12 +34,12 @@ class TodoList extends Component {
 
     const { editTodoId } = this.state
     return (
-      <ul>
+      <StyledTodos>
         {
           isFetching
             ? <h3>Loading Todos...</h3>
             : todos.map(todo => (
-              <li key={todo._id}>
+              <StyledTodo key={todo._id}>
                 {
                   editTodoId === todo._id
                     ? (
@@ -57,10 +61,10 @@ class TodoList extends Component {
                       />
                     )
                 }
-              </li>
+              </StyledTodo>
             ))
         }
-      </ul>
+      </StyledTodos>
     )
   }
 }

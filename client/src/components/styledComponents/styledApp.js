@@ -14,3 +14,15 @@ background-color: #222;
 export const H1 = styled.h1`
   font-size: 1.5em;
 `
+
+export const StyledTodos = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const StyledTodo = styled.div`
+  width: 250px;
+  height: 100%;
+  background: #eee;
+  margin: 20px;
+`
