@@ -1,7 +1,22 @@
 import React, { Component, Fragment } from 'react'
-import './App.css'
+import styled from 'styled-components'
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+
+
+const StyledApp = styled.div`
+  text-align: center;
+`
+const StyledAppHeader = styled.div`
+background-color: #222;
+  padding: 20px;
+  margin-bottom: 50px;
+  color: white;
+`
+
+const H1 = styled.h1`
+  font-size: 1.5em;
+`
 
 class App extends Component {
   state = {
@@ -120,12 +135,11 @@ class App extends Component {
 
     return (
       <Fragment>
-        <div className="App">
-          <header className="App-header">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <h1 className="App-title">My todos</h1>
-          </header>
-        </div>
+        <StyledApp>
+          <StyledAppHeader>
+            <H1>My todos</H1>
+          </StyledAppHeader>
+        </StyledApp>
         <div>
           <TodoForm
             addTodo={this.addTodo}
