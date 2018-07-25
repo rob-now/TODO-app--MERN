@@ -78,3 +78,7 @@ export const StyledEditButton = Button.extend`
 export const StyledRemoveButton = Button.extend`
   background: #c33;
 `
+
+export const StyledTodoParagraph = styled.p`
+  padding: 10px;
+`

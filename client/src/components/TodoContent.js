@@ -4,6 +4,7 @@ import {
   StyledTodoContainer,
   StyledEditButton,
   StyledRemoveButton,
+  StyledTodoParagraph,
 } from './styledComponents/styledApp'
 
 class TodoContent extends Component {
@@ -17,7 +18,6 @@ class TodoContent extends Component {
       todo,
       editTodoMode,
       removeTodo,
-      toggleTodoDone,
     } = this.props
     return (
       <Fragment>
@@ -27,13 +27,13 @@ class TodoContent extends Component {
             checked={todo.isDone}
             onChange={() => toggleTodoDone(todo._id, todo)}
           /> */}
-          <p>
+          <StyledTodoParagraph>
             {
               todo.isDone
                 ? <del>{todo.todo}</del>
                 : todo.todo
             }
-          </p>
+          </StyledTodoParagraph>
 
         </StyledTodoContainer>
         <StyledTodoButtonsContainer>
