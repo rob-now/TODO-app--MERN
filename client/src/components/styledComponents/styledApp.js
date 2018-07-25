@@ -24,13 +24,6 @@ export const StyledTodos = styled.div`
   padding: 30px;
 `
 
-export const StyledTodoButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 20px 0;
-  background: rgba(0, 140, 206);
-`
-
 export const StyledTodo = styled.div`
   width: 220px;
   height: 100%;
@@ -39,13 +32,6 @@ export const StyledTodo = styled.div`
   margin: 20px;
 `
 export const StyledTodoContainer = styled.div`
-  // position: absolute;
-  // top: 15px;
-  // bottom: 15px;
-  // left: 15px;
-  // right: 15px;
-  // visibility: hidden;
-  // opacity: 0;
   width: 100%;
   min-height: 180px;
   color: #fff;
@@ -54,11 +40,36 @@ export const StyledTodoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: opacity .3s;
+  border-radius: 5px 5px 0 0;
   &:hover {
-    background: blue;
-    visibility: visible;
-    opacity: 1;
-    cursor: pointer;
+    background: rgba(0, 140, 206, 0.8);
   }
+`
+
+export const StyledTodoButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: rgba(0, 140, 206);
+  opacity: 0.2;
+  border-radius: 0 0 5px 5px;
+  &:hover {
+    opacity: 1;
+  }
+`
+
+const Button = styled.button`
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 10px;
+`
+
+export const StyledEditButton = Button.extend`
+
+`
+export const StyledRemoveButton = Button.extend`
+  background: #c33;
 `

@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react'
 import {
   StyledTodoButtonsContainer,
   StyledTodoContainer,
+  StyledEditButton,
+  StyledRemoveButton,
 } from './styledComponents/styledApp'
 
 class TodoContent extends Component {
@@ -28,18 +30,18 @@ class TodoContent extends Component {
 
         </StyledTodoContainer>
         <StyledTodoButtonsContainer>
-          <button
+          <StyledEditButton
             type="button"
             onClick={() => editTodoMode(todo._id)}
           >
             Edit
-          </button>
-          <button
+          </StyledEditButton>
+          <StyledRemoveButton
             type="button"
             onClick={() => removeTodo(todo._id)}
           >
             Remove
-          </button>
+          </StyledRemoveButton>
         </StyledTodoButtonsContainer>
       </Fragment>
     )
