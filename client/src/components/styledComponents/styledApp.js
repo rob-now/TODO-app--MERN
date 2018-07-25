@@ -41,6 +41,7 @@ export const StyledTodoContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 5px 5px 0 0;
+  cursor: pointer;
   &:hover {
     background: rgba(0, 140, 206, 0.8);
   }
@@ -51,11 +52,11 @@ export const StyledTodoButtonsContainer = styled.div`
   justify-content: space-around;
   padding: 20px 0;
   background: rgba(0, 140, 206);
-  opacity: 0.2;
+  // opacity: 0.9;
   border-radius: 0 0 5px 5px;
-  &:hover {
-    opacity: 1;
-  }
+  // &:hover {
+  //   opacity: 1;
+  // }
 `
 
 const Button = styled.button`
@@ -65,6 +66,10 @@ const Button = styled.button`
   background: transparent;
   border: 2px solid #fff;
   border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    border-color: #eee;
+  }
 `
 
 export const StyledEditButton = Button.extend`

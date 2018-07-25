@@ -7,6 +7,11 @@ import {
 } from './styledComponents/styledApp'
 
 class TodoContent extends Component {
+  handleTodoClick = () => {
+    this.props.todo.isDone
+    this.props.toggleTodoDone(this.props.todo._id, this.props.todo)
+  }
+
   render() {
     const {
       todo,
@@ -16,17 +21,19 @@ class TodoContent extends Component {
     } = this.props
     return (
       <Fragment>
-        <StyledTodoContainer>
-          <input
+        <StyledTodoContainer onClick={this.handleTodoClick}>
+          {/* <input
             type="checkbox"
             checked={todo.isDone}
             onChange={() => toggleTodoDone(todo._id, todo)}
-          />
-          {
-            todo.isDone
-              ? <del>{todo.todo}</del>
-              : todo.todo
-          }
+          /> */}
+          <p>
+            {
+              todo.isDone
+                ? <del>{todo.todo}</del>
+                : todo.todo
+            }
+          </p>
 
         </StyledTodoContainer>
         <StyledTodoButtonsContainer>
