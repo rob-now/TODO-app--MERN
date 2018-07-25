@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { StyledTodoButtonsContainer } from './styledComponents/styledApp'
+import {
+  StyledTodoButtonsContainer,
+  StyledTodoContainer,
+} from './styledComponents/styledApp'
 
 class TodoContent extends Component {
   render() {
@@ -11,16 +14,19 @@ class TodoContent extends Component {
     } = this.props
     return (
       <Fragment>
-        <input
-          type="checkbox"
-          checked={todo.isDone}
-          onChange={() => toggleTodoDone(todo._id, todo)}
-        />
-        {
-          todo.isDone
-            ? <del>{todo.todo}</del>
-            : todo.todo
-        }
+        <StyledTodoContainer>
+          <input
+            type="checkbox"
+            checked={todo.isDone}
+            onChange={() => toggleTodoDone(todo._id, todo)}
+          />
+          {
+            todo.isDone
+              ? <del>{todo.todo}</del>
+              : todo.todo
+          }
+
+        </StyledTodoContainer>
         <StyledTodoButtonsContainer>
           <button
             type="button"
