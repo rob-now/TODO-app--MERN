@@ -21,12 +21,7 @@ class TodoContent extends Component {
     } = this.props
     return (
       <Fragment>
-        <StyledTodoContainer onClick={this.handleTodoClick}>
-          {/* <input
-            type="checkbox"
-            checked={todo.isDone}
-            onChange={() => toggleTodoDone(todo._id, todo)}
-          /> */}
+        <StyledTodoContainer isDone={todo.isDone} onClick={this.handleTodoClick}>
           <StyledTodoParagraph>
             {
               todo.isDone

@@ -36,7 +36,7 @@ export const StyledTodoContainer = styled.div`
   width: 100%;
   min-height: 180px;
   color: #fff;
-  background: rgba(0, 140, 206, 0.7);
+  background: ${props => (props.isDone ? 'rgba(43, 170, 43, 0.9)' : 'rgba(0, 140, 206, 0.7)')};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +44,7 @@ export const StyledTodoContainer = styled.div`
   border-radius: 5px 5px 0 0;
   cursor: pointer;
   &:hover {
-    background: rgba(0, 140, 206, 0.8);
+    background: ${props => (props.isDone ? 'rgba(43, 170, 43, 0.8)' : 'rgba(0, 140, 206, 0.8)')};
   }
 `
 
