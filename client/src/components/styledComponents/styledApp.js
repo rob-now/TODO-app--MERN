@@ -99,8 +99,9 @@ export const StyledCancelButton = StyledRemoveButton.extend`
 `
 
 export const StyledTodoParagraph = styled.p`
-  padding: 15px;
+  padding: 0 15px;
   font-size: 14px;
+  margin: 10px 0;
 `
 
 export const StyledFormErrorParagraph = StyledTodoParagraph.extend`
@@ -123,8 +124,8 @@ export const StyledAddTodoInput = StyledInput.extend`
 `
 
 export const StyledAddTodoContainer = styled.div`
-  height: 80px;
-  border: 1px solid black;
+  height: 70px;
+  // border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;

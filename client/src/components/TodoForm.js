@@ -4,6 +4,7 @@ import {
   StyledAddTodoInputContainer,
   StyledAddTodoInput,
   StyledSubmitButton,
+  StyledFormErrorParagraph,
 } from './styledComponents/styledApp'
 
 class TodoForm extends Component {
@@ -62,7 +63,14 @@ class TodoForm extends Component {
               +
             </StyledSubmitButton>
           </StyledAddTodoInputContainer>
-          {formError && <p>{formError.message}</p>}
+          {
+            formError
+            && (
+              <StyledFormErrorParagraph>
+                {formError.message}
+              </StyledFormErrorParagraph>
+            )
+          }
         </StyledAddTodoContainer>
       </form>
     )
