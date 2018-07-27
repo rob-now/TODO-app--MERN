@@ -17,7 +17,7 @@ export const H1 = styled.h1`
 
 export const StyledTodos = styled.div`
   box-sizing: border-box;
-  width: 600px;
+  max-width: 840px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -45,6 +45,10 @@ export const StyledTodoContainer = styled.div`
   &:hover {
     background: rgba(0, 140, 206, 0.8);
   }
+`
+
+export const StyledInputContainer = StyledTodoContainer.extend`
+
 `
 
 export const StyledTodoButtonsContainer = styled.div`
