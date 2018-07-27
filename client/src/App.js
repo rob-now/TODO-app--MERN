@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react'
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import {
-  StyledApp,
+  // StyledApp,
   StyledAppHeader,
-  H1,
+  // H1,
 } from './components/styledComponents/styledApp'
 
 class App extends Component {
