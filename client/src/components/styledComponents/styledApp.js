@@ -83,6 +83,13 @@ export const StyledRemoveButton = Button.extend`
   background: #c33;
 `
 
+export const StyledUpdateButton = Button.extend`
+  background: #3a3;
+  &:hover {
+
+  }
+`
+
 export const StyledTodoParagraph = styled.p`
   padding: 15px;
   font-size: 14px;
