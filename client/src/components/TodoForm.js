@@ -3,6 +3,7 @@ import {
   StyledAddTodoContainer,
   StyledAddTodoInputContainer,
   StyledAddTodoInput,
+  StyledSubmitButton,
 } from './styledComponents/styledApp'
 
 class TodoForm extends Component {
@@ -50,17 +51,16 @@ class TodoForm extends Component {
         <StyledAddTodoContainer>
           <StyledAddTodoInputContainer>
             <StyledAddTodoInput
-              id="form-todo-name"
               type="text"
               name="todoName"
               value={todoName}
               onChange={this.handleChange}
             />
-            <button
+            <StyledSubmitButton
               type="submit"
             >
               +
-            </button>
+            </StyledSubmitButton>
           </StyledAddTodoInputContainer>
           {formError && <p>{formError.message}</p>}
         </StyledAddTodoContainer>

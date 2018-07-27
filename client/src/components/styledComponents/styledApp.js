@@ -54,7 +54,10 @@ export const StyledInputContainer = StyledTodoContainer.extend`
 
 export const StyledAddTodoInputContainer = styled.div`
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 10px 0;
 `
 
 export const StyledTodoButtonsContainer = styled.div`
@@ -114,14 +117,32 @@ export const StyledInput = styled.input`
 
 export const StyledAddTodoInput = StyledInput.extend`
   width: 30%;
-  border: 1px solid black;
-  margin: 0 20px;
+  border: 2px solid rgba(0, 140, 206);
+  outline: none;
+  margin: 0;
 `
 
 export const StyledAddTodoContainer = styled.div`
-  height: 75px;
+  height: 80px;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+export const StyledSubmitButton = styled.button`
+  border-radius: 100%;
+  border: none;
+  background: #3a3;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  margin-left: 5px;
+  &:hover {
+    box-shadow: 0 0 5px black;
+    cursor: pointer;
+  }
 `
