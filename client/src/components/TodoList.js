@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TodoContent from './TodoContent';
 import TodoEditForm from './TodoEditForm';
 import {
+  H3,
   StyledTodos,
   StyledTodo,
 } from './styledComponents/styledApp'
@@ -37,7 +38,7 @@ class TodoList extends Component {
       <StyledTodos>
         {
           isFetching
-            ? <h3>Loading Todos...</h3>
+            ? <H3>Loading Todos...</H3>
             : todos.map(todo => (
               <StyledTodo key={todo._id}>
                 {

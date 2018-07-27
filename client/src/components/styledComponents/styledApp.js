@@ -15,6 +15,12 @@ export const H1 = styled.h1`
   font-size: 1.5em;
 `
 
+export const H3 = styled.h3`
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 140, 206);
+`
+
 export const StyledAddTodoContainer = styled.div`
   height: 70px;
   display: flex;
@@ -59,7 +65,6 @@ export const StyledTodos = styled.div`
 export const StyledTodo = styled.div`
   width: 220px;
   height: 100%;
-  // min-height: 150px;
   background: #eee;
   margin: 20px;
 `
@@ -89,11 +94,7 @@ export const StyledTodoButtonsContainer = styled.div`
   justify-content: space-around;
   padding: 20px 0;
   background: rgba(0, 140, 206);
-  // opacity: 0.9;
   border-radius: 0 0 5px 5px;
-  // &:hover {
-  //   opacity: 1;
-  // }
 `
 
 const Button = styled.button`
