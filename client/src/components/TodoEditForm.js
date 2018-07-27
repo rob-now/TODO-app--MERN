@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   StyledTodoButtonsContainer,
   StyledUpdateButton,
-  StyledRemoveButton,
+  StyledCancelButton,
   StyledInputContainer,
   StyledInput,
   StyledFormErrorParagraph,
@@ -87,12 +87,12 @@ class TodoEditForm extends Component {
           >
             Update
           </StyledUpdateButton>
-          <StyledRemoveButton
+          <StyledCancelButton
             type="button"
             onClick={() => exitEditTodoMode()}
           >
             Cancel
-          </StyledRemoveButton>
+          </StyledCancelButton>
         </StyledTodoButtonsContainer>
 
       </form>

@@ -78,7 +78,6 @@ const Button = styled.button`
 `
 
 export const StyledEditButton = Button.extend`
-
 `
 export const StyledRemoveButton = Button.extend`
   background: #c33;
@@ -86,6 +85,9 @@ export const StyledRemoveButton = Button.extend`
 
 export const StyledUpdateButton = Button.extend`
   background: #3a3;
+`
+
+export const StyledCancelButton = StyledRemoveButton.extend`
 `
 
 export const StyledTodoParagraph = styled.p`
