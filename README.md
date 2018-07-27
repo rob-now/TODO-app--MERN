@@ -60,7 +60,7 @@ Server API is listening at port 5000: `http://localhost:5000`.
 
 ### Mongoose todo Schema
 
-```json
+```js
 {
   username: String,
   todo: String,
