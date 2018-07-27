@@ -86,3 +86,9 @@ export const StyledRemoveButton = Button.extend`
 export const StyledTodoParagraph = styled.p`
   padding: 10px;
 `
+export const StyledInput = styled.input`
+  width: 80%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+`

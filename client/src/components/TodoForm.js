@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './TodoForm.css'
 
 class TodoForm extends Component {
   state = {
@@ -57,7 +56,7 @@ class TodoForm extends Component {
         >
           Add todo
         </button>
-        {formError && <p className="form-error-message">{formError.message}</p>}
+        {formError && <p>{formError.message}</p>}
       </form>
     )
   }

@@ -4,6 +4,7 @@ import {
   StyledEditButton,
   StyledRemoveButton,
   StyledInputContainer,
+  StyledInput,
 } from './styledComponents/styledApp'
 
 class TodoEditForm extends Component {
@@ -63,13 +64,14 @@ class TodoEditForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <StyledInputContainer>
-          <input
-            id="form-todo-name"
+          <StyledInput
+            autoFocus
             type="text"
             name="todoName"
             value={todoName}
             onChange={this.handleChange}
           />
+          {formError && <p>{formError.message}</p>}
         </StyledInputContainer>
         <StyledTodoButtonsContainer>
           <StyledEditButton
@@ -84,7 +86,7 @@ class TodoEditForm extends Component {
             Cancel
           </StyledRemoveButton>
         </StyledTodoButtonsContainer>
-        {formError && <p className="form-error-message">{formError.message}</p>}
+
       </form>
     )
   }
