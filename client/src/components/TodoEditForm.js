@@ -5,6 +5,7 @@ import {
   StyledRemoveButton,
   StyledInputContainer,
   StyledInput,
+  StyledFormErrorParagraph,
 } from './styledComponents/styledApp'
 
 class TodoEditForm extends Component {
@@ -71,7 +72,14 @@ class TodoEditForm extends Component {
             value={todoName}
             onChange={this.handleChange}
           />
-          {formError && <p>{formError.message}</p>}
+          {
+            formError
+            && (
+              <StyledFormErrorParagraph>
+                {formError.message}
+              </StyledFormErrorParagraph>
+            )
+          }
         </StyledInputContainer>
         <StyledTodoButtonsContainer>
           <StyledEditButton

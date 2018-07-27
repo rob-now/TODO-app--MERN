@@ -48,7 +48,7 @@ export const StyledTodoContainer = styled.div`
 `
 
 export const StyledInputContainer = StyledTodoContainer.extend`
-
+  justify-content: flex-start;
 `
 
 export const StyledTodoButtonsContainer = styled.div`
@@ -84,11 +84,18 @@ export const StyledRemoveButton = Button.extend`
 `
 
 export const StyledTodoParagraph = styled.p`
-  padding: 10px;
+  padding: 15px;
+  font-size: 14px;
 `
+
+export const StyledFormErrorParagraph = StyledTodoParagraph.extend`
+  color: #aa2222;
+`
+
 export const StyledInput = styled.input`
   width: 80%;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
+  margin: 20px 0;
 `
