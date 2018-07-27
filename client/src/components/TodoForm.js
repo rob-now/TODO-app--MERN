@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import {
+  StyledAddTodoContainer,
+  StyledAddTodoInputContainer,
+  StyledAddTodoInput,
+} from './styledComponents/styledApp'
 
 class TodoForm extends Component {
   state = {
@@ -42,21 +47,23 @@ class TodoForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="form-todo-name">Todo name:
-          <input
-            id="form-todo-name"
-            type="text"
-            name="todoName"
-            value={todoName}
-            onChange={this.handleChange}
-          />
-        </label>
-        <button
-          type="submit"
-        >
-          Add todo
-        </button>
-        {formError && <p>{formError.message}</p>}
+        <StyledAddTodoContainer>
+          <StyledAddTodoInputContainer>
+            <StyledAddTodoInput
+              id="form-todo-name"
+              type="text"
+              name="todoName"
+              value={todoName}
+              onChange={this.handleChange}
+            />
+            <button
+              type="submit"
+            >
+              +
+            </button>
+          </StyledAddTodoInputContainer>
+          {formError && <p>{formError.message}</p>}
+        </StyledAddTodoContainer>
       </form>
     )
   }

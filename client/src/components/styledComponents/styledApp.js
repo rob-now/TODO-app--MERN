@@ -52,6 +52,11 @@ export const StyledInputContainer = StyledTodoContainer.extend`
   justify-content: flex-start;
 `
 
+export const StyledAddTodoInputContainer = styled.div`
+  width: 100%;
+  text-align: center;
+`
+
 export const StyledTodoButtonsContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -105,4 +110,18 @@ export const StyledInput = styled.input`
   border: none;
   border-radius: 10px;
   margin: 20px 0;
+`
+
+export const StyledAddTodoInput = StyledInput.extend`
+  width: 30%;
+  border: 1px solid black;
+  margin: 0 20px;
+`
+
+export const StyledAddTodoContainer = styled.div`
+  height: 75px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
