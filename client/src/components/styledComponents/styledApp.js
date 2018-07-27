@@ -21,7 +21,8 @@ export const StyledTodos = styled.div`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 30px;
+  justify-content: center;
+  padding: 20px;
 `
 
 export const StyledTodo = styled.div`
@@ -85,9 +86,6 @@ export const StyledRemoveButton = Button.extend`
 
 export const StyledUpdateButton = Button.extend`
   background: #3a3;
-  &:hover {
-
-  }
 `
 
 export const StyledTodoParagraph = styled.p`
