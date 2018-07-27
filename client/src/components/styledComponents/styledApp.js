@@ -5,9 +5,9 @@ export const StyledApp = styled.div`
 `
 
 export const StyledAppHeader = styled.div`
-background-color: #222;
+  // background-color: #222;
   padding: 20px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   color: white;
 `
 

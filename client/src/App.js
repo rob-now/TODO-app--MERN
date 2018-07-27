@@ -124,11 +124,11 @@ class App extends Component {
 
     return (
       <Fragment>
-        <StyledApp>
-          <StyledAppHeader>
-            <H1>My todos</H1>
-          </StyledAppHeader>
-        </StyledApp>
+        {/* <StyledApp> */}
+        <StyledAppHeader>
+          {/* <H1>My todos</H1> */}
+        </StyledAppHeader>
+        {/* </StyledApp> */}
         <div>
           <TodoForm
             addTodo={this.addTodo}
