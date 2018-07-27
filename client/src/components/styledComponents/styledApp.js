@@ -15,6 +15,37 @@ export const H1 = styled.h1`
   font-size: 1.5em;
 `
 
+export const StyledAddTodoContainer = styled.div`
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const StyledAddTodoInputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const StyledSubmitButton = styled.button`
+  border-radius: 100%;
+  border: none;
+  background: #3a3;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  margin-left: 5px;
+  &:hover {
+    box-shadow: 0 0 5px black;
+    cursor: pointer;
+  }
+`
+
 export const StyledTodos = styled.div`
   box-sizing: border-box;
   max-width: 840px;
@@ -32,6 +63,7 @@ export const StyledTodo = styled.div`
   background: #eee;
   margin: 20px;
 `
+
 export const StyledTodoContainer = styled.div`
   width: 100%;
   min-height: 180px;
@@ -50,14 +82,6 @@ export const StyledTodoContainer = styled.div`
 
 export const StyledInputContainer = StyledTodoContainer.extend`
   justify-content: flex-start;
-`
-
-export const StyledAddTodoInputContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin: 10px 0;
 `
 
 export const StyledTodoButtonsContainer = styled.div`
@@ -121,29 +145,4 @@ export const StyledAddTodoInput = StyledInput.extend`
   border: 2px solid rgba(0, 140, 206);
   outline: none;
   margin: 0;
-`
-
-export const StyledAddTodoContainer = styled.div`
-  height: 70px;
-  // border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const StyledSubmitButton = styled.button`
-  border-radius: 100%;
-  border: none;
-  background: #3a3;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  width: 30px;
-  height: 30px;
-  outline: none;
-  margin-left: 5px;
-  &:hover {
-    box-shadow: 0 0 5px black;
-    cursor: pointer;
-  }
 `

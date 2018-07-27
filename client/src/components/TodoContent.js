@@ -9,7 +9,6 @@ import {
 
 class TodoContent extends Component {
   handleTodoClick = () => {
-    this.props.todo.isDone
     this.props.toggleTodoDone(this.props.todo._id, this.props.todo)
   }
 
@@ -21,7 +20,10 @@ class TodoContent extends Component {
     } = this.props
     return (
       <Fragment>
-        <StyledTodoContainer isDone={todo.isDone} onClick={this.handleTodoClick}>
+        <StyledTodoContainer
+          isDone={todo.isDone}
+          onClick={this.handleTodoClick}
+        >
           <StyledTodoParagraph>
             {
               todo.isDone
